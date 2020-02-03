@@ -17,7 +17,7 @@ class JobOfferSerializer(serializers.Serializer):
         print(validated_data)
         return JobOffer.objects.create(**validated_data)
 
-    def udpate(self, instance, validated_data):
+    def update(self, instance, validated_data):
         instance.company_name = validated_data.get('company_name', instance.company_name)
         instance.company_email = validated_data.get('company_email', instance.company_email)
         instance.job_title = validated_data.get('job_title', instance.job_title)
